@@ -1,4 +1,4 @@
- SalesInsight
+SalesInsight
 
 Sistema de gestão e análise de vendas desenvolvido em Python.
 
@@ -12,7 +12,7 @@ e posteriormente realizar análises dos dados de vendas.
 Em desenvolvimento.
 
 ### Fase atual
-Fase 1 — Fundamentos e cadastro de produtos.
+Fase 2 — Gerenciamento de produtos
 
 🛠️ Tecnologias
 
@@ -22,12 +22,18 @@ Fase 1 — Fundamentos e cadastro de produtos.
 
 📌 Funcionalidades
 
+# Fase 1 — Fundamentos e cadastro de produtos
+
 - [x] Estrutura inicial do projeto
 - [x] Cadastro de produtos
 - [x] Validação de preço
 - [x] Validação de estoque
-- [ ] Categorias
-- [ ] Validação de tamanho
+- [x] Categorias
+- [x] Validação de tamanho
+- [x] Tratamento de entradas inválidas
+
+# Fase 2 — Gerenciamento de produtos
+
 - [ ] Busca de produtos
 - [ ] Alteração de produtos
 - [ ] Exclusão de produtos
