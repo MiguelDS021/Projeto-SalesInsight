@@ -34,13 +34,12 @@ Fase 2 — Gerenciamento de produtos
 
 # Fase 2 — Gerenciamento de produtos
 
-- [ ] Busca de produtos
+- [x] Busca de produtos
 - [ ] Alteração de produtos
 - [ ] Exclusão de produtos
 
 📈 Próximas etapas
 
-- Implementar gerenciamento de produtos
 - Implementar banco de dados
 - Implementar registro de vendas
 - Realizar análise dos dados com Pandas
