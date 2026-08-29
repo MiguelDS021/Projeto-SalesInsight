@@ -35,11 +35,13 @@ Fase 3 — Registro de Vendas
 
 # Fase 2 - Gerenciamento de produtos
 
-- [x] Busca de produtos
+- [x] Busca de produtos por ID
+- [x] Busca de produtos por nome
 - [x] Alteração de produtos
 - [x] Exclusão de produtos
 
 # Fase 3 - Registro de Vendas
+
 - [ ] Registrar uma venda
 - [ ] Associar uma venda a um produto
 - [ ] Validar estoque disponível

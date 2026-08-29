@@ -1,8 +1,11 @@
 id = 0
 categorias = ["Camisetas", "Calças", "Calçados", "Acessórios"]
-camiseta = ["P", "M", "G", "GG"]
-calça = [38, 40, 42, 44]
-calçados = [38, 39, 40, 42]
+tamanhos = {
+    "Camisetas": ["P", "M", "G", "GG"],
+    "Calças": [38, 40, 42, 44],
+    "Calçados": [38, 39, 40, 41],
+    "Acessórios": ["Único"]
+}
 
 def Cadastrar_Produtos(id):
     try:    
@@ -13,63 +16,26 @@ def Cadastrar_Produtos(id):
             else:
                 break  
 
-        while True:
-            cat_escolha = int(input("Digite a categoria: [1] Camiseta | [2] Calça | [3] Calçados | [4] Acessórios"))
+        for i, cat in enumerate(categorias, start=1):
+            print(f"[{i}] {cat}")
+
+        esc_categoria = int(input("Escolha o tamanho: "))
+        if esc_categoria < 1 or esc_categoria > len(categorias):
+            print("ERRO: Digite uma opção válida")
+        else:    
+            categoria = categorias[esc_categoria - 1]
+
+        lista = tamanhos[categoria]
+        for i, tam in enumerate(lista, start=1):
+            print(f"[{i}] {tam}")
             
-        
-            if cat_escolha < 1 or cat_escolha > 4:
-                print("Erro: Digite uma opção válida.")
-        
-            else:   
-                categoria = categorias[cat_escolha-1]
-                break
+        esc_tamanho = int(input("Escolha o tamanho: "))
+        if esc_tamanho < 1 or esc_tamanho > len(lista):
+            print("ERRO: Digite uma opção válida")
+        else:    
+            tamanho = lista[esc_tamanho- 1]
 
-        while True:
-            if categoria == "Camisetas":
-                escolha = int(input("""Escolha o tamanho: 
-                [1] P
-                [2] M
-                [3] G
-                [4] GG """))
 
-                if escolha < 1 or escolha > 4:
-                    print("Erro: Escolha uma opção válida.")
-
-                else:
-                    tamanho = camiseta[escolha-1]
-                    break
-
-            elif categoria == "Calças":
-                escolha2 = int(input("""Escolha o tamanho: 
-                [1] 38
-                [2] 40
-                [3] 42
-                [4] 44 """))
-                        
-                if escolha2 < 1 or escolha2 > 4:
-                    print("Erro: Escolha uma opção válida.")
-                        
-                else:
-                    tamanho = calça[escolha2-1]
-                    break
-
-            elif categoria == "Calçados":
-                escolha3 = int(input("""Escolha o tamanho: 
-                [1] 38
-                [2] 39
-                [3] 40
-                [4] 41 """))
-        
-                if escolha3 < 1 or escolha3 > 4:
-                    print("Erro: Escolha uma opção válida")
-        
-                else:
-                    tamanho= calçados[escolha3-1]
-                    break
-
-            elif categoria == "Acessórios":
-                tamanho = "Único"
-                break
 
         while True:                          
             preço = float(input("Digite o preço: R$ "))
@@ -161,6 +127,7 @@ def Buscar_Por_Id():
 
     if encontrado == False:
         print("Este produto não existe") 
+
                    
 def Buscar_Por_Nome():
     procura = input("Escreva o nome do produto: ")
@@ -180,6 +147,113 @@ def Buscar_Por_Nome():
         print("Não existe produtos com este nome")
 
 
+def Alterar_Produtos():
+    alteração = int(input("Digite o id do produto: "))
+
+    id_encontrado = False
+    for chave, valor in Produtos.items():
+        if alteração == valor["ID"]:
+            id_encontrado = True
+            while True:
+                submenu = int(input("""Escolha uma opção:
+                [1] Nome
+                [2] Categoria
+                [3] Tamanho
+                [4] Preço
+                [5] Estoque
+                [6] Voltar """))
+
+                if submenu < 1 or submenu > 6:
+                    print("Erro: Escolha uma opção válida.")
+                else:
+
+                    if submenu == 1:
+                        Alterar_Nome(valor)
+
+                    elif submenu == 2:
+                        Alterar_Categoria(valor)     
+
+                    elif submenu == 3:
+                         Alterar_Tamanho(valor)
+
+                    elif submenu == 4:
+                         Alterar_Preco(valor)
+
+                    elif submenu == 5:       
+                        Alterar_Estoque(valor) 
+
+                    elif submenu == 6:
+                        break    
+
+        if id_encontrado == False:
+            print("O id não existe")
+
+
+def Alterar_Nome(valor):
+    novo_nome= input("Digite o novo nome: ")
+    valor["Nome"] = novo_nome
+
+
+def Alterar_Categoria(valor):
+    escolhe = int(input("""Escolha uma opção:
+    [1] Camiseta
+    [2] Calça
+    [3] Calçados
+    [4] Acessórios"""))
+
+    if escolhe < 1 or escolhe > 4:
+        print("Erro: Escolha uma opção válida.")
+    else:
+        valor["Categoria"] = categorias[escolhe-1]  
+        Alterar_Tamanho(valor)
+
+
+def Alterar_Preco(valor):
+    novo_preço= float(input("Digite um novo preço: "))
+
+    if novo_preço <=0:
+        print("ERRO: Não é permitido valores iguais ou menores que 0")
+    else:
+        valor["Preço"] = novo_preço
+
+
+def Alterar_Estoque(valor):
+    novo_estoque = int(input("Digite um novo valor para estoque: "))
+    if novo_estoque < 0:
+        print("ERRO: Não é permitido valores menores que 0")
+    else:
+        valor["Estoque"] = novo_estoque    
+
+
+def Alterar_Tamanho(valor):
+    lista = tamanhos[valor["Categoria"]]
+
+    for i, tamanho in enumerate(lista, start=1):
+        print(f"[{i}] {tamanho}")
+
+
+    esc_tamanho = int(input("Escolha o tamanho: "))
+    if esc_tamanho < 1 or esc_tamanho > len(lista):
+        print("ERRO: Digite uma opção válida")
+    else:    
+        valor["Tamanho"] = lista[esc_tamanho - 1]
+
+def Excluir_Produtos():
+    procura_id = int(input("Digite o id do produto: "))
+
+    busca_id = False
+
+    for chave, valor in Produtos.items():
+        if procura_id == valor["ID"]:
+            busca_id = True
+            break
+
+    if busca_id:
+        del Produtos[chave]
+        print("Produto excluído com sucesso.")
+    else:
+        print("O ID não existe.")
+
 
 
 while True:
@@ -188,9 +262,11 @@ while True:
         [1] Adicionar produtos
         [2] Mostrar produtos
         [3] Buscar produtos
-        [4] Sair """))
+        [4] Alterar produtos 
+        [5] Excluir produtos
+        [6] Sair"""))
 
-        if opção < 1 or opção > 4:
+        if opção < 1 or opção > 6:
             print("Erro: Escolha uma opção válida.")
         else:
             if opção == 1:
@@ -204,5 +280,11 @@ while True:
                 Buscar_Produtos()
 
             elif opção == 4:
+                Alterar_Produtos()
+
+            elif opção == 5:
+                Excluir_Produtos()
+
+            elif opção == 6:
                 break              
             
