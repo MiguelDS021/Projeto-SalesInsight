@@ -11,8 +11,9 @@ e posteriormente realizar análises dos dados de vendas.
 
 Em desenvolvimento.
 
-### Fase atual
-Fase 2 — Gerenciamento de produtos
+# Fase atual
+
+Fase 3 — Registro de Vendas
 
 🛠️ Tecnologias
 
@@ -22,7 +23,7 @@ Fase 2 — Gerenciamento de produtos
 
 📌 Funcionalidades
 
-# Fase 1 — Fundamentos e cadastro de produtos
+# Fase 1 - Fundamentos e cadastro de produtos
 
 - [x] Estrutura inicial do projeto
 - [x] Cadastro de produtos
@@ -32,16 +33,25 @@ Fase 2 — Gerenciamento de produtos
 - [x] Validação de tamanho
 - [x] Tratamento de entradas inválidas
 
-# Fase 2 — Gerenciamento de produtos
+# Fase 2 - Gerenciamento de produtos
 
 - [x] Busca de produtos
-- [ ] Alteração de produtos
-- [ ] Exclusão de produtos
+- [x] Alteração de produtos
+- [x] Exclusão de produtos
 
+# Fase 3 - Registro de Vendas
+- [ ] Registrar uma venda
+- [ ] Associar uma venda a um produto
+- [ ] Validar estoque disponível
+- [ ] Atualizar estoque após a venda
+- [ ] Calcular valor total da venda
+- [ ] Consultar vendas realizadas
+  
 📈 Próximas etapas
 
 - Implementar banco de dados
-- Implementar registro de vendas
 - Realizar análise dos dados com Pandas
+- Criar visualizações
+- Desenvolver Dashboard no Power BI
 - Criar visualizações
 - Desenvolver dashboard no Power BI
