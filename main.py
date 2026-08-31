@@ -70,10 +70,10 @@ def Adicionar_Produtos(id, nome, categoria, tamanho, preço, estoque):
             "Categoria": categoria,
             "Tamanho": tamanho,
             "Preço": preço,
-            "Estoque": estoque
-            
+            "Estoque": estoque           
 }
 
+    
 def Visualizar_Produtos():
     if not Produtos:
         print("O dicionário não possui produtos cadastrados")
@@ -254,6 +254,58 @@ def Excluir_Produtos():
     else:
         print("O ID não existe.")
 
+Vendas = {}
+def Adicionar_Vendas(ID_venda, ID_produto, Nome, Quantidade, Preço_unitário, Total):
+
+    Vendas[f"Venda{ID_venda}"] = {
+        "ID da venda": ID_venda,
+        "ID do produto": ID_produto,
+        "Nome do produto": Nome,
+        "Quantidade": Quantidade,
+        "Preço unitário": Preço_unitário,
+        "Total": Total
+    }        
+
+id_venda = 0
+def Registrar_Vendas(id_venda):
+    id1 = int(input("Digite o id do produto: "))
+
+    buscado = False
+    
+    for chave, valor in Produtos.items():
+        if valor["ID"] == id1:
+            qtd = int(input("Digite a quantidade desejada: "))
+            buscado = True
+
+            if valor["Estoque"] >= qtd:
+                print("Quantidade em estoque")
+                valor["Estoque"] -= qtd
+                Total = valor["Preço"] * qtd
+                id_venda += 1
+                Adicionar_Vendas(id_venda, id1, valor["Nome"], qtd, valor["Preço"], Total)
+                return id_venda
+
+            else:
+                print("Quantidade em falta no estoque")
+
+    if buscado == False:
+        print("Este produto não existe")     
+
+def Visualizar_Vendas():
+    print(f"{'=' * 5} Vendas {'=' * 5}")
+    if not Vendas:
+        print("Não existem vendas registradas")
+
+    else:
+        for chave, valor in Vendas.items():
+            print(f"""
+{chave}
+ID da venda: {valor["ID da venda"]}
+ID do produto: {valor["ID do produto"]}
+Nome do produto: {valor["Nome do produto"]}
+Quantidade: {valor["Quantidade"]}
+Preço unitário: {valor["Preço unitário"]}
+Total: {valor["Total"]} """)
 
 
 while True:
@@ -264,9 +316,11 @@ while True:
         [3] Buscar produtos
         [4] Alterar produtos 
         [5] Excluir produtos
-        [6] Sair"""))
+        [6] Registrar vendas
+        [7] Visualizar vendas
+        [8] Sair"""))
 
-        if opção < 1 or opção > 6:
+        if opção < 1 or opção > 8:
             print("Erro: Escolha uma opção válida.")
         else:
             if opção == 1:
@@ -286,5 +340,12 @@ while True:
                 Excluir_Produtos()
 
             elif opção == 6:
+               id_venda = Registrar_Vendas(id_venda)
+
+
+            elif opção == 7:
+                Visualizar_Vendas()
+
+            elif opção == 8:    
                 break              
             

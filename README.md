@@ -42,12 +42,14 @@ Fase 3 — Registro de Vendas
 
 # Fase 3 - Registro de Vendas
 
-- [ ] Registrar uma venda
-- [ ] Associar uma venda a um produto
-- [ ] Validar estoque disponível
-- [ ] Atualizar estoque após a venda
-- [ ] Calcular valor total da venda
-- [ ] Consultar vendas realizadas
+- [x] Registrar uma venda
+- [x] Associar uma venda a um produto
+- [x] Validar estoque disponível
+- [x] Atualizar estoque após a venda
+- [x] Calcular valor total da venda
+- [x] Consultar vendas realizadas
+- [ ] Busca de vendas por id
+- [ ] Validação de entradas
   
 📈 Próximas etapas
 
