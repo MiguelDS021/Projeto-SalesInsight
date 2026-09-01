@@ -48,9 +48,9 @@ Fase 3 — Registro de Vendas
 - [x] Atualizar estoque após a venda
 - [x] Calcular valor total da venda
 - [x] Consultar vendas realizadas
-- [ ] Busca de vendas por id
-- [ ] Validação de entradas
-  
+- [x] Busca de vendas por id
+- [x] Validação de entradas
+   
 📈 Próximas etapas
 
 - Implementar banco de dados

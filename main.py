@@ -276,17 +276,20 @@ def Registrar_Vendas(id_venda):
         if valor["ID"] == id1:
             qtd = int(input("Digite a quantidade desejada: "))
             buscado = True
+            if qtd == 0 or qtd < 0:
+                print("ERRO: Não é permitido o valor 0")
 
-            if valor["Estoque"] >= qtd:
-                print("Quantidade em estoque")
-                valor["Estoque"] -= qtd
-                Total = valor["Preço"] * qtd
-                id_venda += 1
-                Adicionar_Vendas(id_venda, id1, valor["Nome"], qtd, valor["Preço"], Total)
-                return id_venda
+            else:    
+                if valor["Estoque"] >= qtd:
+                    print("Quantidade em estoque")
+                    valor["Estoque"] -= qtd
+                    Total = valor["Preço"] * qtd
+                    id_venda += 1
+                    Adicionar_Vendas(id_venda, id1, valor["Nome"], qtd, valor["Preço"], Total)
+                    return id_venda
 
-            else:
-                print("Quantidade em falta no estoque")
+        else:
+            print("Quantidade em falta no estoque")
 
     if buscado == False:
         print("Este produto não existe")     
@@ -307,6 +310,22 @@ Quantidade: {valor["Quantidade"]}
 Preço unitário: {valor["Preço unitário"]}
 Total: {valor["Total"]} """)
 
+def Buscar_Vendas_Por_ID():
+    id2 = int(input("Digite o id da venda: "))
+
+    condição = False
+    for chave, valor in Vendas.items():
+        if valor["ID da venda"] == id2:
+            print(f"""{valor["ID da venda"]}
+            {valor["ID do produto"]}
+            {valor["Nome do produto"]}
+            {valor["Quantidade"]}
+            {valor["Preço unitário"]}
+            {valor["Total"]}""")
+            condição = True
+            
+    if condição == False:
+        print("Este produto não existe") 
 
 while True:
     
@@ -318,9 +337,10 @@ while True:
         [5] Excluir produtos
         [6] Registrar vendas
         [7] Visualizar vendas
-        [8] Sair"""))
+        [8] Buscar vendas
+        [9] Sair"""))
 
-        if opção < 1 or opção > 8:
+        if opção < 1 or opção > 9:
             print("Erro: Escolha uma opção válida.")
         else:
             if opção == 1:
@@ -347,5 +367,8 @@ while True:
                 Visualizar_Vendas()
 
             elif opção == 8:    
+                Buscar_Vendas_Por_ID()
+
+            elif opção == 9:
                 break              
             
