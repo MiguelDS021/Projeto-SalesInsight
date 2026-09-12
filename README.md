@@ -1,16 +1,16 @@
-*SalesInsight*
+# *SalesInsight*
 
 Sistema de gestão e análise de vendas desenvolvido em Python.
 
-🎯 Objetivo
+# 🎯 Objetivo
 
 Desenvolver um sistema capaz de gerenciar produtos, vendas e estoque, além de realizar análises dos dados de vendas por meio do Pandas e visualizações com Matplotlib.
 
-🚧 Status
+# 🚧 Status
 
 Concluído.
 
-🛠️ Tecnologias
+# 🛠️ Tecnologias
 
 - Python
 - Pandas
@@ -19,7 +19,7 @@ Concluído.
 - Git
 - GitHub
 
-📌 Funcionalidades
+# 📌 Funcionalidades
 
 # Fase 1 - Fundamentos e cadastro de produtos
 
@@ -79,7 +79,7 @@ SalesInsight/
 ├── README.md 
 └── .gitignore
 
-Descrição dos arquivos
+# Descrição dos Arquivos
 
 * main.py - responsável pelo menu principal e a inclusão do sistema.
 * produtos.py - contém as funções de cadastro, consulta, alteração e exclusão de produtos. 
@@ -89,26 +89,26 @@ Descrição dos arquivos
 * README.md - documentação do Projeto.
 * .gitignore - arquivos e pastas ignorados pelo Git.
 
-📊 Visualizações
+# 📊 Visualizações
 
 O projeto possui seis gráficos para auxiliar na análise dos dados de vendas:
 
-1° Faturamento por produto
-2° Quantidade vendida por produto
-3° Faturamento por categoria
-4° Quantidade vendida por categoria
-5° Participação no faturamento por categoria
-6° Evolução do faturamento ao longo do tempo
+- 1° Faturamento por produto
+- 2° Quantidade vendida por produto
+- 3° Faturamento por categoria
+- 4° Quantidade vendida por categoria
+- 5° Participação no faturamento por categoria
+- 6° Evolução do faturamento ao longo do tempo
 
-📚 Aprendizados
+# 📚 Aprendizados
 
 Durante o desenvolvimento do SalesInsight foram trabalhados conceitos de:
 
-Python
-Estruturas de dados
-Funções e modularização
-Validação e tratamento de entradas
-Manipulação de dados com Pandas
-Visualização de dados com Matplotlib
-Organização de projetos
-Git e GitHub
+- Python
+- Estruturas de dados
+- Funções e modularização
+- Validação e tratamento de entradas
+- Manipulação de dados com Pandas
+- Visualização de dados com Matplotlib
+- Organização de projetos
+- Git e GitHub
