@@ -4,12 +4,11 @@ Sistema de gestão e análise de vendas desenvolvido em Python.
 
 🎯 Objetivo
 
-Desenvolver um sistema capaz de gerenciar produtos, vendas e estoque,
-e posteriormente realizar análises dos dados de vendas.
+Desenvolver um sistema capaz de gerenciar produtos, vendas e estoque, além de realizar análises dos dados de vendas por meio do Pandas e visualizações com Matplotlib.
 
 🚧 Status
 
-Em desenvolvimento.
+Concluído.
 
 # Fase atual
 
@@ -18,6 +17,9 @@ Fase 3 — Registro de Vendas
 🛠️ Tecnologias
 
 - Python
+- Pandas
+- Matplotlib
+- Mplcursors
 - Git
 - GitHub
 
@@ -48,11 +50,69 @@ Fase 3 — Registro de Vendas
 - [x] Atualizar estoque após a venda
 - [x] Calcular valor total da venda
 - [x] Consultar vendas realizadas
-- [x] Busca de vendas por id
+- [x] Busca de vendas por ID
 - [x] Validação de entradas
-   
-📈 Próximas etapas
 
-- Realizar análise dos dados com Pandas
-- Desenvolver Dashboard no Power BI
-- Criar visualizações
+# Fase 4 - Análise de Dados
+
+- [x] Análise das vendas com Pandas
+- [x] Faturamento total
+- [x] Quantidade de produtos vendidos
+- [x] Produtos mais vendidos
+- [x] Faturamento por produto
+- [x] Ticket médio
+- [x] Faturamento por categoria
+   
+# Fase 5 - Visualização de Dados
+
+- [x] Faturamento por produto
+- [x] Quantidade vendida por produto
+- [x] Faturamento por categoria
+- [x] Quantidade vendida por categoria
+- [x] Participação no faturamento por categoria
+- [x] Evolução do faturamento ao longo do tempo
+
+📂 Estrutura do Projeto
+
+SalesInsight/ 
+├── main.py 
+├── produtos.py 
+├── vendas.py 
+├── analise.py 
+├── graficos.py 
+├── README.md 
+└── .gitignore
+
+Descrição dos arquivos
+
+* main.py - responsável pelo menu principal e a inclusão do sistema.
+* produtos.py - contém as funções de cadastro, consulta, alteração e exclusão de produtos. 
+* vendas.py - contém as funções de registro e consulta das vendas.
+* analise.py - contém as funções para a análise de dados com Pandas.
+* graficos.py - criação de visualização gráfica com Matplotlib.
+* README.md - documentação do Projeto.
+* .gitignore - arquivos e pastas ignorados pelo Git.
+
+📊 Visualizações
+
+O projeto possui seis gráficos para auxiliar na análise dos dados de vendas:
+
+1° Faturamento por produto
+2° Quantidade vendida por produto
+3° Faturamento por categoria
+4° Quantidade vendida por categoria
+5° Participação no faturamento por categoria
+6° Evolução do faturamento ao longo do tempo
+
+📚 Aprendizados
+
+Durante o desenvolvimento do SalesInsight foram trabalhados conceitos de:
+
+Python
+Estruturas de dados
+Funções e modularização
+Validação e tratamento de entradas
+Manipulação de dados com Pandas
+Visualização de dados com Matplotlib
+Organização de projetos
+Git e GitHub
