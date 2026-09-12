@@ -1,4 +1,4 @@
-SalesInsight
+*SalesInsight*
 
 Sistema de gestão e análise de vendas desenvolvido em Python.
 
@@ -9,10 +9,6 @@ Desenvolver um sistema capaz de gerenciar produtos, vendas e estoque, além de r
 🚧 Status
 
 Concluído.
-
-# Fase atual
-
-Fase 3 — Registro de Vendas
 
 🛠️ Tecnologias
 
