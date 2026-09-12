@@ -53,9 +53,6 @@ Fase 3 — Registro de Vendas
    
 📈 Próximas etapas
 
-- Implementar banco de dados
 - Realizar análise dos dados com Pandas
-- Criar visualizações
 - Desenvolver Dashboard no Power BI
 - Criar visualizações
-- Desenvolver dashboard no Power BI
