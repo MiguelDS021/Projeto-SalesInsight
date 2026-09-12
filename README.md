@@ -68,16 +68,16 @@ Concluído.
 - [x] Participação no faturamento por categoria
 - [x] Evolução do faturamento ao longo do tempo
 
-📂 Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
-SalesInsight/ 
-├── main.py 
-├── produtos.py 
-├── vendas.py 
-├── analise.py 
-├── graficos.py 
-├── README.md 
-└── .gitignore
+- SalesInsight/ 
+- ├── main.py 
+- ├── produtos.py 
+- ├── vendas.py 
+- ├── analise.py 
+- ├── graficos.py 
+- ├── README.md 
+- └── .gitignore
 
 # Descrição dos Arquivos
 
